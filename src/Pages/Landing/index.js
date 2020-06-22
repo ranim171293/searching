@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import SearchBar from "../../Components/SeachBar";
 import { compose } from "redux";
 // import _ from 'lodash';
-import { searchPeople, fetch_user, repoDetails } from "../../Redux/action";
+import { searchPeople, fetchUser, repoDetails } from "../../Redux/action";
 
 import LandingComponent from "./style";
 
@@ -17,7 +17,7 @@ class Landing extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetch_user);
+    this.props.dispatch(fetchUser);
   }
 
   searchItem = () => {

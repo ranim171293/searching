@@ -1,29 +1,28 @@
 import { searchUserApi, ListOfUser, repoDetailsApi } from "../service/index";
 import { USERS_LIST_FULFILLED, SEARCH_USER_FULFILLED, REPO_DETAILS_FULFILLED } from "../Redux/Reducer/constant";
-// import _ from 'lodash';
 
 export const searchPeople = user => dispatch => ({
     type: SEARCH_USER_FULFILLED,
     payload: searchUserApi(user).then(
       res => {
         const data = res.data.items || [];
-        dispatch(fetch_user_success(data));
+        dispatch(fetchUserSuccess(data));
         return data;
       }
     ).catch(err => {
-      dispatch(fetch_user);
+      dispatch(fetchUser);
       return true;
     }),
 });
 
-export const fetch_user_success = (payload) => ({
+export const fetchUserSuccess = (payload) => ({
   type: USERS_LIST_FULFILLED,
   payload,
 });
 
-export const fetch_user = (dispatch) => {
+export const fetchUser = (dispatch) => {
   ListOfUser().then((res) => {
-    dispatch(fetch_user_success(res.data));
+    dispatch(fetchUserSuccess(res.data));
     return res.data;
   });
 };
