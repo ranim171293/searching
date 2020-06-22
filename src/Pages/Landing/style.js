@@ -13,6 +13,11 @@ const LandingComponent = styled.div`
     padding: 20px;
     border-bottom: 1px solid #dedede;
     width: 100%;
+    cursor:pointer;
+  }
+  .avatar {
+    width: 70px;
+    margin-right: 30px;
   }
 `;
 

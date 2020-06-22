@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import {connect} from 'react-redux';
 const Landing = lazy(() => import('../src/Pages/Landing'));
+const Details = lazy(() => import('../src/Pages/Details'));
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route exact path="/" component={Landing}></Route>
+            <Route exact path="/user/:username" component={Details}></Route>
           </Switch>
         </Suspense>
       </Router>

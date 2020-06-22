@@ -47,5 +47,6 @@
   background: #ffffff;
   margin-top: 20px;
   justify-content: center;
+  overflow-x: hidden;
 }
 

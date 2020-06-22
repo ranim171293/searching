@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export function fetchArticleDetails(username) {
+export function searchUserApi(username) {
   return axios.get(`https://api.github.com/search/users?q=${username}`)
     .then((res) => {
-      console.log(res);
+      return res;
   }).catch(error => {
     console.log(error);
   });
@@ -16,4 +16,13 @@ export function ListOfUser() {
   }).catch(error => {
     console.log(error);
   });
+}
+
+export function repoDetailsApi(url) {
+  return axios.get(url)
+  .then(res =>{
+    return res;
+  }).catch(error => {
+    return error;
+  })
 }
